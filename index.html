@@ -10,30 +10,47 @@
         <title>Truth or Dare Scratch Card</title>
         <style>
         
-            .scratch-card {
-                position: relative;
-                display: inline-block;
-                width: 300px;
-                height: 150px;
-                background: #d3d3d3;
-                color: white;
-                font-size: 20px;
-                font-weight: bold;
-                line-height: 150px;
-                text-align: center;
-                user-select: none;
-                cursor: pointer;
-                overflow: hidden;
-                margin-top: 50px;
-            }
-            canvas {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-            }
-        </style>
+            .scratch-container {
+            position: relative;
+            display: inline-block;
+            width: 90%;
+            max-width: 350px;
+            height: 200px;
+            background: #d3d3d3;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            user-select: none;
+            cursor: pointer;
+            overflow: hidden;
+            margin-top: 50px;
+            border-radius: 10px;
+        }
+        #result-text {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            font-size: 18px;
+            line-height: 1.5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: black;
+            background-color: white;
+            border-radius: 10px;
+        }
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
     </head>
 
     <body bgcolor = "#434c5e" text = "#ffffff">
@@ -45,20 +62,20 @@
         <h2>This is all I've made so far</h2>
 
         <h2>Scratch to Reveal Truth or Dare!</h2>
-        <div class="scratch-card" id="scratch-card">
-            <span id="result-text"></span>
-            <canvas id="scratch-canvas"></canvas>
-        </div>
+    <div class="scratch-container">
+        <div id="result-text"></div>
+        <canvas id="scratch-canvas"></canvas>
+    </div>
 
         <script>
             const truths = [
                 "What's your biggest fear?",
                 "Have you ever had a crush on a teacher?",
-                "What’s the most embarrassing thing you’ve ever done?",
+                "What’s the most embarrassing thing you’ve done?",
                 "Have you ever lied to get out of trouble?",
                 "What’s your biggest regret?",
                 "Who was your first crush?",
-                "If you could swap lives with someone for a day, who would it be?",
+                "If you could swap lives with someone, who would it be?",
                 "What’s the worst lie you’ve ever told?",
                 "What’s the weirdest thing you’ve ever eaten?",
                 "What’s one secret you’ve never told anyone?",
@@ -106,13 +123,13 @@
             document.addEventListener("DOMContentLoaded", () => {
                 const canvas = document.getElementById("scratch-canvas");
                 const ctx = canvas.getContext("2d");
-                const scratchCard = document.getElementById("scratch-card");
+                const scratchContainer = document.querySelector(".scratch-container");
                 const resultText = document.getElementById("result-text");
 
                 resultText.textContent = getRandomTruthOrDare();
 
-                canvas.width = scratchCard.clientWidth;
-                canvas.height = scratchCard.clientHeight;
+                canvas.width = scratchContainer.clientWidth;
+                canvas.height = scratchContainer.clientHeight;
                 ctx.fillStyle = "#bbb";
                 ctx.fillRect(0, 0, canvas.width, canvas.height);
 
@@ -125,7 +142,7 @@
                     let y = e.clientY - rect.top;
                     ctx.globalCompositeOperation = "destination-out";
                     ctx.beginPath();
-                    ctx.arc(x, y, 15, 0, Math.PI * 2);
+                    ctx.arc(x, y, 20, 0, Math.PI * 2);
                     ctx.fill();
                 }
 
