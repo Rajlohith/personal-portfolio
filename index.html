@@ -1,161 +1,27 @@
-
+<!DOCTYPE html>
 <html lang = "en">
-    
     <head>
         <meta charset = "UTF-8">
-        <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
-        <meta http-equiv = "X-UA-Compatible" content = "IE = edge">
+        <meta http-equiv = "X-UA-Compatible" content = "IE=edge">
         <meta name = "robots" content = "noindex, nofollow">
-
-        <title>Truth or Dare Scratch Card</title>
-        <style>
         
-            .scratch-container {
-            position: relative;
-            display: inline-block;
-            width: 90%;
-            max-width: 350px;
-            height: 200px;
-            background: #d3d3d3;
-            color: white;
-            font-size: 20px;
-            font-weight: bold;
-            text-align: center;
-            user-select: none;
-            cursor: pointer;
-            overflow: hidden;
-            margin-top: 50px;
-            border-radius: 10px;
-        }
-        #result-text {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            padding: 20px;
-            box-sizing: border-box;
-            font-size: 18px;
-            line-height: 1.5;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: black;
-            background-color: white;
-            border-radius: 10px;
-        }
-        canvas {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-    </style>
+        <title>Rajlohith</title>
+        
+        <link rel = "stylesheet" href = "style.css">
     </head>
+    
+    <body>
 
-    <body bgcolor = "#434c5e" text = "#ffffff">
-        <h3>I know,</h3>
-        <h4>I know,</h4>
-        <h5>I know,</h5>
-        <h1>I'm Lazy!</h1>
-        <br><br>
-        <h2>This is all I've made so far</h2>
+        <div class = "center-block">
+            <h1>My Site Is Under Construction...</h1>
+        </div>
 
-        <h2>Scratch to Reveal Truth or Dare!</h2>
-    <div class="scratch-container">
-        <div id="result-text"></div>
-        <canvas id="scratch-canvas"></canvas>
-    </div>
+        <div class = "right-block">
+            <p>please stop bullying me, I'll get it done, I've been busy
+                <img src = "https://em-content.zobj.net/source/apple/354/smiling-face-with-tear_1f972.png" alt = "Smiling emoji face with tear">
+                <img src = "https://em-content.zobj.net/source/apple/354/thumbs-up_1f44d.png" alt = "Thumbs up emoji">
+            </p>
+        </div>
 
-        <script>
-            const truths = [
-                "What's your biggest fear?",
-                "Have you ever had a crush on a teacher?",
-                "What’s the most embarrassing thing you’ve done?",
-                "Have you ever lied to get out of trouble?",
-                "What’s your biggest regret?",
-                "Who was your first crush?",
-                "If you could swap lives with someone, who would it be?",
-                "What’s the worst lie you’ve ever told?",
-                "What’s the weirdest thing you’ve ever eaten?",
-                "What’s one secret you’ve never told anyone?",
-                "Have you ever cheated in a game?",
-                "Have you ever stolen something small?",
-                "What’s your most embarrassing moment in school?",
-                "What’s the worst rumor you’ve heard about yourself?",
-                "Have you ever snooped on someone's phone?",
-                "Who do you have a secret crush on?",
-                "Have you ever sent a text and regretted it?",
-                "If you had to kiss someone in this room, who would it be?",
-                "What’s the dumbest thing you’ve done for love?",
-                "If you could erase one moment from your life, what would it be?"
-            ];
-
-            const dares = [
-                "Sing a song loudly for 30 seconds.",
-                "Do 10 push-ups right now.",
-                "Dance like a crazy person for 1 minute.",
-                "Talk in a funny accent for 2 minutes.",
-                "Let someone draw on your face with a marker.",
-                "Send a random funny emoji to the last person you texted.",
-                "Try to lick your elbow.",
-                "Call your crush and say 'I love you.'",
-                "Do an impression of a celebrity for 1 minute.",
-                "Hold a plank for 30 seconds.",
-                "Spin around 10 times and try to walk straight.",
-                "Make a silly face and post it on social media.",
-                "Say the alphabet backwards as fast as you can.",
-                "Tell the most embarrassing story from your childhood.",
-                "Let someone write something on your forehead.",
-                "Do your best chicken dance.",
-                "Go outside and yell 'I love pizza!'",
-                "Try to touch your nose with your tongue.",
-                "Do a funny TikTok dance.",
-                "Walk around the room like a crab."
-            ];
-
-            function getRandomTruthOrDare() {
-                let isTruth = Math.random() < 0.5;
-                let question = isTruth ? truths[Math.floor(Math.random() * truths.length)] : dares[Math.floor(Math.random() * dares.length)];
-                return (isTruth ? "Truth: " : "Dare: ") + question;
-            }
-
-            document.addEventListener("DOMContentLoaded", () => {
-                const canvas = document.getElementById("scratch-canvas");
-                const ctx = canvas.getContext("2d");
-                const scratchContainer = document.querySelector(".scratch-container");
-                const resultText = document.getElementById("result-text");
-
-                resultText.textContent = getRandomTruthOrDare();
-
-                canvas.width = scratchContainer.clientWidth;
-                canvas.height = scratchContainer.clientHeight;
-                ctx.fillStyle = "#bbb";
-                ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-                let isDrawing = false;
-
-                function scratch(e) {
-                    if (!isDrawing) return;
-                    let rect = canvas.getBoundingClientRect();
-                    let x = e.clientX - rect.left;
-                    let y = e.clientY - rect.top;
-                    ctx.globalCompositeOperation = "destination-out";
-                    ctx.beginPath();
-                    ctx.arc(x, y, 20, 0, Math.PI * 2);
-                    ctx.fill();
-                }
-
-                canvas.addEventListener("mousedown", () => isDrawing = true);
-                canvas.addEventListener("mouseup", () => isDrawing = false);
-                canvas.addEventListener("mousemove", scratch);
-                canvas.addEventListener("touchstart", () => isDrawing = true);
-                canvas.addEventListener("touchend", () => isDrawing = false);
-                canvas.addEventListener("touchmove", (e) => {
-                    let touch = e.touches[0];
-                    scratch({ clientX: touch.clientX, clientY: touch.clientY });
-                });
-            });
-        </script>
     </body>
 </html>

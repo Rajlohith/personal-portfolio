@@ -1,0 +1,36 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    background-color: #484e51;
+    color: #e8e6e3;
+}
+
+body {
+    display: table;
+}
+
+.center-block {
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+}
+
+.right-block {
+    text-align: right;
+    position: absolute;
+    bottom: 1px;
+    right: 1px;
+    font-size: 13px;
+}
+
+.right-block img {
+    width: 20px;
+    vertical-align: middle;
+}
+
+.right-block img + img {
+     margin-left: -3px;
+}
