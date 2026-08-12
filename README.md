@@ -1,2 +1,2 @@
-# lohithraj.com
+# Personal Portfolio
  Personal Website
