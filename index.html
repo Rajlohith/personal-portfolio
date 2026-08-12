@@ -1,27 +1,223 @@
 <!DOCTYPE html>
-<html lang = "en">
-    <head>
-        <meta charset = "UTF-8">
-        <meta http-equiv = "X-UA-Compatible" content = "IE=edge">
-        <meta name = "robots" content = "noindex, nofollow">
-        
-        <title>Rajlohith</title>
-        
-        <link rel = "stylesheet" href = "style.css">
-    </head>
-    
-    <body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Lohith Raj's Portfolio" />
+  <meta name="keywords" content="lohith raj, portfolio, software developer, machine learning" />
+  <meta name="robots" content="noindex,nofollow,noarchive,nosnippet,noimageindex,nocache,max-snippet:0,max-image-preview:none,max-video-preview:-1" />
+  <meta name="color-scheme" content="light dark" />
+  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script>
+    (function () {
+      // Default is light (chosen for a professional/portfolio context).
+      // Only deviate if the visitor has explicitly picked dark before.
+      var saved = localStorage.getItem('theme');
+      var theme = saved === 'dark' ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+  <title>Lohith Raj's Portfolio</title>
+</head>
+<body>
+  <div id="topBackground"></div>
 
-        <div class = "center-block">
-            <h1>My Site Is Under Construction...</h1>
+  <div class="container-lg">
+
+    <!-- Navbar -->
+    <div class="navbar-container">
+      <nav class="navbar">
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <button id="themeToggle" class="theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="false">
+          <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </nav>
+    </div>
+
+    <div class="background"></div>
+
+    <!-- Hero -->
+    <section class="hero-container">
+      <h1 class="hero-title"><span class="typed" id="typedName"></span><span class="caret">&nbsp;</span></h1>
+      <p class="hero-description">
+        I am an MCA student at RV College of Engineering, Bengaluru.<br />
+        My interests span machine learning, networking, and full-stack development.<br />
+        Check out my <a href="#projects">projects</a> below.
+      </p>
+    </section>
+
+    <!-- About -->
+    <section class="about-container" id="about">
+      <div class="terminal">
+        <div class="terminal-header">
+          <div class="header-button red"></div>
+          <div class="header-button yellow"></div>
+          <div class="header-button green"></div>
         </div>
+        <div class="terminal-window">
+          <div class="statement">
+            <span class="input-statement">Lohith.location</span>
+            <div class="return-statement">"Bengaluru, KA"</div>
+          </div>
+          <div class="statement">
+            <span class="input-statement">Lohith.contact</span>
+            <div class="return-statement">[<a href="mailto:rajlohith3@protonmail.ch">rajlohith3@protonmail.ch</a>, <a href="https://linkedin.com/in/rajlohith" target="_blank" rel="noopener noreferrer">LinkedIn</a>, <a href="https://github.com/rajlohith" target="_blank" rel="noopener noreferrer">github</a>]</div>
+          </div>
+          <div class="statement">
+            <span class="input-statement">Lohith.resume</span>
+            <div class="return-statement"><a href="static/lohithraj_resume.pdf" target="_blank" rel="noopener noreferrer">lohithraj_resume.pdf</a></div>
+          </div>
+          <div class="statement">
+            <span class="input-statement">Lohith.education</span>
+            <div class="return-statement">["MCA - R V College of Engineering, Bengaluru (2025 - Present)", "BCA - Sindhi College, Bengaluru (2022 - 2025)"]</div>
+          </div>
+          <div class="statement">
+            <span class="input-statement">Lohith.experience</span>
+            <div class="return-statement">"Machine Learning Intern @ Cereblis"</div>
+          </div>
+          <div class="statement">
+            <span class="input-statement">Lohith.languages</span>
+            <div class="return-statement">["Python", "JavaScript", "Java", "HTML/CSS"]</div>
+          </div>
+          <div class="statement">
+            <span class="input-statement">Lohith.interests</span>
+            <div class="return-statement">["networking", "machine learning", "IoT", "full-stack development"]</div>
+          </div>
+          <div class="statement cursor-line">
+            <span class="input-statement"></span>
+            <div class="return-statement"><span class="term-caret">&nbsp;</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <div class = "right-block">
-            <p>please stop bullying me, I'll get it done, I've been busy
-                <img src = "https://em-content.zobj.net/source/apple/354/smiling-face-with-tear_1f972.png" alt = "Smiling emoji face with tear">
-                <img src = "https://em-content.zobj.net/source/apple/354/thumbs-up_1f44d.png" alt = "Thumbs up emoji">
+    <!-- Projects -->
+    <section id="projects">
+      <h2 class="section-title">Projects</h2>
+      <div class="projects-container">
+
+        <article class="project-card">
+          <img class="project-image" src="images/mablytic.png" alt="MABlytic" />
+          <div class="project-content">
+            <h3>MABlytic</h3>
+            <p>
+              A full-stack Progressive Web App that serves real-time ads personalized to user preference profiles.
+              Built with FastAPI and Vanilla JS, with a tracking pipeline that logs every view and click into SQLite
+              to build a behavioral dataset for downstream ML training. Ad selection uses rule-based preference
+              matching today, with a Thompson Sampling multi-armed bandit planned as the next iteration. A Service
+              Worker enables offline functionality and installability as a standalone app.
             </p>
-        </div>
+            <div class="project-skills">
+              <span class="project-skill">Python</span>
+              <span class="project-skill">FastAPI</span>
+              <span class="project-skill">SQLAlchemy</span>
+              <span class="project-skill">SQLite</span>
+              <span class="project-skill">JavaScript</span>
+              <span class="project-skill">HTML5</span>
+              <span class="project-skill">CSS3</span>
+              <span class="project-skill">PWA</span>
+            </div>
+            <div class="project-links">
+              <a class="project-link" href="https://mablytic.web.app/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+              <a class="project-link secondary" href="https://github.com/Rajlohith/mablytic" target="_blank" rel="noopener noreferrer">View Source</a>
+            </div>
+          </div>
+        </article>
 
-    </body>
+        <article class="project-card">
+          <img class="project-image" src="images/smart_staircase.png" alt="Smart Staircase" />
+          <div class="project-content">
+            <h3>Smart Staircase</h3>
+            <p>
+              A real-time 3D digital twin, built with Three.js, of a physical step-triggered LED and audio
+              staircase. An Arduino Uno reads beam-break sensors and drives WS2812B LED strips and speech synthesis,
+              bridged by an ESP32 that also controls a servo-actuated door. The browser app supports full two-way
+              control over WebSocket &mdash; actions in the browser can move the real hardware, and the hardware's
+              live state is mirrored back into the 3D scene, whether connected over the local network or through a
+              cloud relay.
+            </p>
+            <div class="project-skills">
+              <span class="project-skill">Three.js</span>
+              <span class="project-skill">JavaScript</span>
+              <span class="project-skill">WebSockets</span>
+              <span class="project-skill">Arduino</span>
+              <span class="project-skill">ESP32</span>
+              <span class="project-skill">IoT</span>
+              <span class="project-skill">Node.js</span>
+              <span class="project-skill">PWA</span>
+            </div>
+            <div class="project-links">
+              <a class="project-link" href="https://github.com/Rajlohith/smart-staircase" target="_blank" rel="noopener noreferrer">View Source</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img class="project-image" src="images/network_congestion.png" alt="Network Congestion Mitigation" />
+          <div class="project-content">
+            <h3>Network Congestion Mitigation</h3>
+            <p>
+              A congestion detection and mitigation system built on Software-Defined Networking principles to
+              analyze and optimize network traffic flow. Monitors live network conditions and dynamically adjusts
+              traffic-handling strategies to reduce congestion, with simulated network scenarios used to evaluate
+              performance and measure gains in data transmission efficiency.
+            </p>
+            <div class="project-skills">
+              <span class="project-skill">Python</span>
+              <span class="project-skill">SDN</span>
+              <span class="project-skill">Networking</span>
+              <span class="project-skill">Simulation</span>
+            </div>
+            <div class="project-links">
+              <a class="project-link" href="https://github.com/Rajlohith/Network-Congestion-Mitigation" target="_blank" rel="noopener noreferrer">View Source</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img class="project-image" src="images/ip_subnet_tool.png" alt="IP Subnet Optimization Tool" />
+          <div class="project-content">
+            <h3>IP Subnet Optimization Tool</h3>
+            <p>
+              An automated subnetting engine that dynamically calculates the optimal CIDR notation, subnet mask,
+              and network/broadcast addresses for a given host requirement. Ships two ways: a lightweight Flask
+              web app for quick lookups, and a desktop GUI (Tkinter + ttkbootstrap) that scans every viable CIDR
+              block, ranks them by address-space efficiency, plots the comparison as a bar chart, and exports the
+              full breakdown to CSV.
+            </p>
+            <div class="project-skills">
+              <span class="project-skill">Python</span>
+              <span class="project-skill">Flask</span>
+              <span class="project-skill">Tkinter</span>
+              <span class="project-skill">Matplotlib</span>
+              <span class="project-skill">Networking</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2 class="section-title">Contact</h2>
+      <div class="contact-links">
+        <span><a href="mailto:rajlohith3@protonmail.ch">rajlohith3@protonmail.ch</a></span>
+        <span><a href="https://linkedin.com/in/rajlohith" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
+        <span><a href="https://github.com/rajlohith" target="_blank" rel="noopener noreferrer">GitHub</a></span>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>Made by Lohith Raj &copy; <span id="year">2026</span></span>
+    </footer>
+
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
 </html>
